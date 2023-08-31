@@ -1,82 +1,66 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-body {
-    background-color: #000;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+nav {
+	background-color: #2f2f2f;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+nav ul {
+	display: flex;
+	list-style: none;
 }
 
-.login-box {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 50px;
-    width: 400px;
+nav li {
+	margin: 0 20px;
 }
 
-.title {
-    color: #fff;
-    font-size: 28px;
-    margin-bottom: 20px;
+nav a {
+	display: block;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+nav a:hover {
+	background-color: #4caf50;
 }
 
-.input-box {
-    position: relative;
-    margin-bottom: 20px;
+.spin:hover {
+	animation: spin 1s linear infinite;
 }
 
-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #fff;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 10px 10px 5px;
-    width: 100%;
+.bounce:hover {
+	animation: bounce 1s infinite;
 }
 
-label {
-    color: #fff;
-    font-size: 16px;
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    transition: all 0.3s ease-in-out;
+.flip:hover {
+	animation: flip 1s;
 }
 
-input:focus + label, input:valid + label {
-    font-size: 12px;
-    top: -10px;
-    color: #f1c40f;
+.pulse:hover {
+	animation: pulse 1s infinite;
 }
 
-.btn {
-    background-color: #f1c40f;
-    border: none;
-    border-radius: 5px;
-    color: #000;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
+@keyframes spin {
+	100% { transform: rotate(360deg); }
 }
 
-.btn:hover {
-    background-color: #000;
-    color: #f1c40f;
+@keyframes bounce {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+}
+
+@keyframes flip {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+@keyframes pulse {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.2); }
+	100% { transform: scale(1); }
 }
